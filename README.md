@@ -6,6 +6,8 @@ DRIVER={MySQL ODBC 9.0 ANSI Driver};SERVER=(yourserverhere);DATABASE=(yourDBhere
 The main commands are: update, calculator, help, exit, calc
 When you launch it, you must first run the updater to fill out the recipe list.
 The calculator commands are: list (lists all recipes available), new, delete, listdb (lists recipes in the database), modify, view (shows you your recipe's production values), rename.
+You can also use back or exit anytime in the calculator.
+
 I've added help commands in most areas of it, but it's pretty straight forward. You can either use the calculator to see the results, or go into MySQL and see them there.
 
 I've included a bat file that will launch the calculator.
