@@ -859,11 +859,11 @@ def update():
     soup = BeautifulSoup(page.content, 'html.parser')
     find = soup.find('tbody')
     find = find.find_all('tr')
-    find.pop(0)
-    count1 = len(find)
+
+    count1 = len(find) - 1
     count2 = 0
     while True:
-        item = find[count2]
+        item = find[count2 + 1]
 
         product = item.find_next('td').text
         product = product.replace('Alternate', '')
@@ -1269,3 +1269,6 @@ def update():
         r.pop('json')
         json.dump(r, write)
     print("Raw Materials Added.")
+    done = 'done.json'
+    with open(done, 'w') as write:
+        json.dump(done, write)

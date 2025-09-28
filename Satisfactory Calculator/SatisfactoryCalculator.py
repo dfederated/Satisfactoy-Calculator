@@ -1,7 +1,8 @@
 import sys
 import Obtainer
 import Calculator
-
+import glob, os
+ready = 0
 cmdlist = ('help', 'calculator', 'calc', 'update', 'exit')
 while True:
     usercmd2 = input('Please enter a Command:  ')
@@ -16,6 +17,20 @@ while True:
     if usercmd2 == 'update':
         Obtainer.update()
     if usercmd2 == 'calculator':
-        Calculator.calculator()
+        while True:
+            try:
+                with open('done.json') as r:
+                    ready = 1
+            except FileNotFoundError:
+                print('Please run updater before using the calculator.')
+                break
+            Calculator.calculator()
     if usercmd2 == 'calc':
-        Calculator.calculator()
+        while True:
+            try:
+                with open('done.json') as r:
+                    ready = 1
+            except FileNotFoundError:
+                print('Please run updater before using the calculator.')
+                break
+            Calculator.calculator()
