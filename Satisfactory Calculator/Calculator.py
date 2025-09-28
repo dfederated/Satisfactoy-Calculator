@@ -741,4 +741,3 @@ def calculator():
                         print('(Y OR N)')
                 if satisfied.lower() in ('yes', 'y'):
                     break
-calculator()
